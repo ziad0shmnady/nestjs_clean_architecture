@@ -1,7 +1,7 @@
 // Generic CRUD operations for any model
-import { PrismaService } from '../prisma/prisma.service'; // Adjust the import path as needed
-import { GenericRepository } from 'src/core/abstracts';
-import { Prisma, User } from '@prisma/client';
+import { PrismaService } from "../prisma/prisma.service"; // Adjust the import path as needed
+import { GenericRepository } from "src/core/abstracts";
+import { Prisma, User } from "@prisma/client";
 
 export class PrismaGenericRepository<T> implements GenericRepository<T> {
   private prismaService: PrismaService;
@@ -24,7 +24,7 @@ export class PrismaGenericRepository<T> implements GenericRepository<T> {
 
   async getAllRelated(
     relatedFieldName: string,
-    relatedFieldId: string,
+    relatedFieldId: string
   ): Promise<T[]> {
     return this.prismaService[this.model].findMany({
       where: { [relatedFieldName]: relatedFieldId },
@@ -65,7 +65,7 @@ export class PrismaGenericRepository<T> implements GenericRepository<T> {
 
   async findManyWithSelect(
     fields: { [key: string]: boolean },
-    id: string,
+    id: string
   ): Promise<Partial<T>[]> {
     return await this.prismaService[this.model].findMany({
       where: { [this.primaryKeyField]: id },

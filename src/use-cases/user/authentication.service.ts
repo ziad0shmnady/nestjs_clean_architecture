@@ -50,7 +50,7 @@ export class AuthenticationService {
 
   async generateLoginToken(user: User): Promise<string> {
     const payload = {
-      userId: user.user_id,
+      id: user.user_id,
       role: user.role,
     };
     return jwt.sign(payload, process.env.JWT_SECRET_KEY, {

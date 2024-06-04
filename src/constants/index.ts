@@ -1,4 +1,9 @@
+export enum Role {
+  Admin = "admin",
+  User = "user",
+  Public = "public",
+}
 export enum EntityUsers {
-  Admin = "Admin",
-  User = "User",
+  Admin = "admin",
+  User = "user",
 }

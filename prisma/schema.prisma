@@ -21,6 +21,6 @@ model User {
 }
 
 enum EntityUsers {
-  Admin
+  admin
   user
 }

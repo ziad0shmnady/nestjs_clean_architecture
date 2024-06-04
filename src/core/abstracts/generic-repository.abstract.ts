@@ -1,5 +1,5 @@
 export abstract class GenericRepository<T> {
-  abstract getAll(): Promise<T[]>;
+  abstract getAll(user): Promise<T[]>;
 
   abstract getById(id: string): Promise<T | null>;
 
